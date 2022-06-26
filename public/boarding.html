@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--====== Title ======-->
+    <title> PetVishwa </title>
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="img/png" />
+    <!--====== Animate Css ======-->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <!--====== Flaticon css ======-->
+    <link rel="stylesheet" href="assets/fonts/flaticon/flaticon.css" />
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+    <!--====== Owl Carousel css ======-->
+    <link rel="stylesheet" href="assets/css/slick.css" />
+    <!--====== Nice Select ======-->
+    <link rel="stylesheet" href="assets/css/nice-select.css" />
+    <!--====== Bootstrap Datepicker ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.css" />
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="assets/css/default.css" />
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <!--====== PRELOader ======-->
+    <!-- <div class="preloader d-flex align-items-center justify-content-center">
+        <svg id="svg-sprite">
+            <symbol id="paw" viewBox="0 0 249 209.32">
+                <ellipse cx="27.917" cy="106.333" stroke-width="0" rx="27.917" ry="35.833"/>
+                <ellipse cx="84.75" cy="47.749" stroke-width="0" rx="34.75" ry="47.751"/>
+                <ellipse cx="162" cy="47.749" stroke-width="0" rx="34.75" ry="47.751"/>
+                <ellipse cx="221.083" cy="106.333" stroke-width="0" rx="27.917" ry="35.833"/>
+                <path stroke-width="0" d="M43.98 165.39s9.76-63.072 76.838-64.574c0 0 71.082-6.758 83.096 70.33 0 0 2.586 19.855-12.54 31.855 0 0-15.75 17.75-43.75-6.25 0 0-7.124-8.374-24.624-7.874 0 0-12.75-.125-21.5 6.625 0 0-16.375 18.376-37.75 12.75 0 0-28.29-7.72-19.77-42.86z"/>
+            </symbol>
+        </svg>
+        <div class="cssload-loading">
+            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+        </div>
+    </div> -->
+
+    <header class="header-three">
+        <div class="header-top">
+            <div class="container container-custom-three">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <ul class="contact-list">
+                        <li>
+                            <a href="mailto:info@website.com">
+                                <i class="fal fa-envelope"></i>
+                                info@website.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+90898787709">
+                                <i class="fal fa-phone"></i>
+                                +908 987 877 09
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-end">
+                        <!-- search btton -->
+                        <div class="search">
+                            <a href="#" class="search-icon" id="searchBtn">
+                                <i class="fal fa-search open-icon"></i>
+                                <i class="fal fa-times close-icon"></i>
+                            </a>
+                            <div class="search-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Search your keyword...">
+                                    <button type="submit"><i class="far fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <ul class="sigma_social-links justify-content-center">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="red-icon"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="white-icon"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-menu-area sticky-header">
+            <div class="container container-custom-three">
+                <div class="nav-container d-flex align-items-center justify-content-between">
+                    <!-- Site Logo -->
+                    <div class="site-logo">
+                        <a href="index.html"><img src="assets/img/logo.png" alt="Logo" style="width:50%;"></a>
+                    </div>
+                    <!-- Main Menu -->
+                    <div class="nav-menu d-lg-flex align-items-center justify-content-between">
+
+                        <!-- Navbar Close Icon -->
+                        <div class="navbar-close">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Mneu Items -->
+                        <div class="menu-items">
+                            <ul>
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li><a href="about.html">About</a></li>
+                                <li>
+                                    <a href="boarding.html">Boarding</a>
+                                   
+                                </li>
+                                <li>
+                                    <a href="services.html">Service</a>
+                                
+                                </li>
+                               
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- navbar right content -->
+                    <div class="menu-right-buttons">
+                        <!-- Log in icon -->
+                        <div class="login-btn ml-0">
+                            <a href="javascript:void(0)" id="loginBtn"data-toggle="modal" data-target="#myModal"><i class="fal fa-user"></i></a>
+                        </div>
+                        
+                        <a class="main-btn btn-filled ml-2 d-none d-md-block" href="contact.html" tabindex="0">Book now </a>
+                    
+                        <!-- Navbar Toggler -->
+                        <div class="navbar-toggler">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--====== BREADCRUMB PART START ======-->
+    <section class="breadcrumb-area" style="background-image: url(assets/img/bg/04.jpg);">
+        <div class="container">
+            <div class="breadcrumb-text">
+                <div class="breadcrumb-title">
+                    <span>Veterinary care reimagined</span>
+                    <h2 class="page-title">Boarding </h2>
+                </div>
+                <ul class="breadcrumb-nav">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Boarding</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sigma_subheader-shape waves">
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+    </section>
+    <!--====== BREADCRUMB PART END ======-->
+    <!--====== ROOM-GRIRD START ======-->
+    <section class="room-section room-grid-style pt-120 pb-120">
+        <div class="container">
+            <div class="row justify-content-center room-gird-loop" id="boardingtable">
+        
+            </div>
+            <!-- <div class="pagination-wrap">
+                <ul>
+                    <li><a href="#"><i class="far fa-angle-double-left"></i></a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">10</a></li>
+                    <li><a href="#"><i class="far fa-angle-double-right"></i></a></li>
+                </ul>
+            </div> -->
+        </div>
+    </section>
+    <!--====== ROOM-GRIRD END ======-->
+    <!--====== Back to Top ======-->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fal fa-angle-double-up"></i>
+    </a>
+    <!--====== FOOTER PART START ======-->
+    <footer class="footer-two">
+        <div class="footer-widget-area pt-100 pb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 order-1">
+                        <!-- Site Info Widget -->
+                        <div class="widget site-info-widget mb-50">
+                            <div class="footer-logo mb-50">
+                                <img src="assets/img/logo.png" alt="Logo">
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed doing eius mod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitat ion ullamco laboris nisi.
+                            </p>
+                            <ul class="sigma_social-links mt-40">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" class="red-icon"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#" class="white-icon"><i class="fab fa-behance"></i></a></li>
+                                <li><a href="#" class="blue-icon"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-3 order-lg-2">
+                        <!-- Nav Widget -->
+                        <div class="widget nav-widget mb-50">
+                            <div>
+                                <h4 class="widget-title">Services.</h4>
+                                <ul>
+                                    <li><a href="service-details.html">Pet Spa & Nailbar</a></li>
+                                    <li><a href="service-details.html">Pet Food</a></li>
+                                    <li><a href="service-details.html">Adoption</a></li>
+                                    <li><a href="service-details.html">Pet Marrige</a></li>
+                                    <li><a href="services.html">Services</a></li>
+                                    <li><a href="service-details.html">Pet Grooming</a></li>
+                                    <li><a href="service-details.html">Pet Packages</a></li>
+                                    <li><a href="service-details.html">Pet Training</a></li>
+                                    <li><a href="service-details.html">Pet Medics</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 order-2 order-lg-3">
+                        <!-- Contact Widget -->
+                        <div class="widget contact-widget mb-50">
+                            <h4 class="widget-title">Contact Us.</h4>
+                            <div class="contact-lists">
+                                <div class="contact-box">
+                                    <div class="icon">
+                                        <i class="flaticon-call-1"></i>
+                                    </div>
+                                    <div class="desc">
+                                        <h6 class="title">Phone Number</h6>
+                                        +987 876 765 76 577
+                                    </div>
+                                </div>
+                                <div class="contact-box">
+                                    <div class="icon">
+                                        <i class="flaticon-email"></i>
+                                    </div>
+                                    <div class="desc">
+                                        <h6 class="title">Email Address</h6>
+                                        <a href="#">info@webmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="contact-box">
+                                    <div class="icon">
+                                        <i class="flaticon-pin"></i>
+                                    </div>
+                                    <div class="desc">
+                                        <h6 class="title">Office Address</h6>
+                                        14/A, Muchkin City, NYC
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area pt-30 pb-30">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-5 order-2 order-md-1">
+                        <p class="copyright-text copyright-two">Copyright By@<a href="#">Softezi</a> - 2022</p>
+                    </div>
+                    <div class="col-lg-6 col-md-7 order-1 order-md-2">
+                        <div class="footer-menu text-center text-md-right">
+                            <ul>
+                                <li><a href="#">Terms of use</a></li>
+                                <li><a href="#">Privacy Environmental Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--====== FOOTER PART END ======-->
+    <!--====== Modal Popup Start ======-->
+    <!-- The Modal -->
+    <div class="modal fade on-load-modal" id="myModal">
+        <div class="modal-dialog modal-dialog-centeRed">
+            <div class="modal-content" style="background-image: url(assets/img/popup.jpg)">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close popup-trigger" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="modal-inner">
+                        <h3 class="title">Login</h3>
+                        <p>Welcome Back!</p>
+                        <form action="">
+
+                            <div class="form-group form-focus ">
+                                <label class="focus-label">Mobile Number</label>
+                                <input type="text" class="form-control" id="phoneNumber" placeholder="9864521236">
+                            </div>
+                            <div id="recaptcha-container"></div>
+                            <div class="form-group form-focus otp">
+                                <label class="focus-label">OTP</label>
+                                <input type="text" class="form-control" id="codenumber" placeholder="********">
+                            </div>
+    
+    
+                            <a href="javascript:void(0);" class="btn btn-primary btn-block btn-lg login-btn" id="otpbtn"
+                                onclick="submitPhoneNumberAuth();">Get OTP</a>
+    
+                            <a href="javascript:void(0);" class="btn btn-primary btn-block btn-lg login-btn" id="signbtn"
+                                onclick="submitPhoneNumberAuthCode();">Sign In</a>
+                        </form>
+                        <a href="registration.html">Join us.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== Modal Popup End ======-->
+    <!--====== jquery js ======-->
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <!--====== Slick js ======-->
+    <script src="assets/js/slick.min.js"></script>
+    <!--====== Isotope js ======-->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <!--====== Magnific Popup js ======-->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!--====== inview js ======-->
+    <script src="assets/js/jquery.inview.min.js"></script>
+    <!--====== counterup js ======-->
+    <script src="assets/js/jquery.countTo.js"></script>
+    <!--====== Nice Select ======-->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!--====== Bootstrap datepicker ======-->
+    <script src="assets/js/bootstrap-datepicker.js"></script>
+    <!--====== Ion Rangeslider ======-->
+    <script src="assets/js/ion.rangeSlider.min.js"></script>
+    <!--====== Wow JS ======-->
+    <script src="assets/js/wow.min.js"></script>
+    <!--====== Google Map ======-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
+    <script src="assets/js/map.js"></script>
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+<script src="assets/pagejs/login.js"></script>
+
+<script>
+      var servpro = database.collection("AllServices"); //serviceType
+    var count=1;
+      servpro
+  .where("serviceType","==","BOARDING").get()
+    .then((snapshot) => {
+      snapshot.forEach((doc) => {
+            console.log(doc.data());
+            document.getElementById("boardingtable").innerHTML+=
+            ' <div class="col-lg-4 col-md-6 col-sm-6">'+
+                '    <div class="room-box mb-30">'+
+                '        <div class="room-img-wrap">'+
+                '            <div class="room-img" style="background-image: url(assets/img/room/0'+count+'.jpg);"></div>'+
+                '        </div>'+
+                '        <div class="room-desc">'+
+                '            <ul class="icons">'+
+                '                <li><i class="fal fa-bone"></i></li>'+
+                '                <li><i class="fal fa-cat"></i></li>'+
+                '                <li><i class="fal fa-dog"></i></li>'+
+                '                <li><i class="fal fa-paw"></i></li>'+
+                '                <li><i class="fal fa-shower"></i></li>'+
+                '                <li><i class="fal fa-tennis-ball"></i></li>'+
+                '                <li><i class="fal fa-concierge-bell"></i></li>'+
+                '            </ul>'+
+                '            <h4 class="title"><a href="package-details.html?id='+doc.data().serviceProviderId+'">'+doc.data().serviceName+'</a></h4>'+
+                '            <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor.</p>'+
+                '            <span class="price">Rs. '+doc.data().price+'/Night</span>'+
+                '            <a href="package-details.html?id='+doc.data().serviceProviderId+'"" class="book-btn">Booking Now</a>'+
+                '        </div>'+
+                '    </div>'+
+                '</div>';
+                if(count>=9){
+                    count=1;
+                }else{
+                    count++;
+                }
+      })
+    });
+
+</script>
+
+</body>
+
+</html>

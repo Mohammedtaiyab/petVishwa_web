@@ -1,0 +1,123 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("flaticon20b5.ttf?162c24c43d480cb68f12bfdce2aa10bc") format("truetype"),
+url("flaticon20b5.woff?162c24c43d480cb68f12bfdce2aa10bc") format("woff"),
+url("flaticon20b5.woff2?162c24c43d480cb68f12bfdce2aa10bc") format("woff2"),
+url("flaticon20b5.eot?162c24c43d480cb68f12bfdce2aa10bc#iefix") format("embedded-opentype"),
+url("flaticon20b5.svg?162c24c43d480cb68f12bfdce2aa10bc#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, 
+i[class*=" flaticon-"]:before,
+span[class^="flaticon-"]:before, 
+span[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+i[class^="flaticon-"], 
+i[class*=" flaticon-"],
+span[class^="flaticon-"], 
+span[class*=" flaticon-"]{
+   line-height: 0;
+}
+
+.flaticon-call:before {
+    content: "\f101";
+}
+.flaticon-location:before {
+    content: "\f102";
+}
+.flaticon-envelope:before {
+    content: "\f103";
+}
+.flaticon-pawprint:before {
+    content: "\f104";
+}
+.flaticon-grooming:before {
+    content: "\f105";
+}
+.flaticon-dog-toy:before {
+    content: "\f106";
+}
+.flaticon-pet-food:before {
+    content: "\f107";
+}
+.flaticon-cat:before {
+    content: "\f108";
+}
+.flaticon-dog:before {
+    content: "\f109";
+}
+.flaticon-vet:before {
+    content: "\f10a";
+}
+.flaticon-pet-toy:before {
+    content: "\f10b";
+}
+.flaticon-house:before {
+    content: "\f10c";
+}
+.flaticon-dog-food:before {
+    content: "\f10d";
+}
+.flaticon-dog-food-1:before {
+    content: "\f10e";
+}
+.flaticon-pet-shop:before {
+    content: "\f10f";
+}
+.flaticon-location-1:before {
+    content: "\f110";
+}
+.flaticon-call-1:before {
+    content: "\f111";
+}
+.flaticon-email:before {
+    content: "\f112";
+}
+.flaticon-pin:before {
+    content: "\f113";
+}
+.flaticon-pet-friendly:before {
+    content: "\f114";
+}
+.flaticon-pet-care:before {
+    content: "\f115";
+}
+.flaticon-dog-cage:before {
+    content: "\f116";
+}
+.flaticon-customer:before {
+    content: "\f117";
+}
+.flaticon-customer-satisfaction:before {
+    content: "\f118";
+}
+.flaticon-medal:before {
+    content: "\f119";
+}
+.flaticon-quotation-mark:before {
+    content: "\f11a";
+}
+.flaticon-quotation-mark-1:before {
+    content: "\f11b";
+}
+.flaticon-heart:before {
+    content: "\f11c";
+}
+.flaticon-hearts:before {
+    content: "\f11d";
+}
+.flaticon-freedom:before {
+    content: "\f11e";
+}
+.flaticon-freedom-1:before {
+    content: "\f11f";
+}

@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "petvishwa-924f3"
+  },
+  "targets": {
+    "petvishwa-924f3": {
+      "hosting": {
+        "petvishwa": [
+          "petvishwa-924f3"
+        ],
+        "petvishwa-924f3": [
+          "petvishwa"
+        ]
+      }
+    }
+  }
+}

@@ -18,8 +18,8 @@ function Logout() {
   // Sign-out successful.
   //   document.getElementById("user_div").value = "";
   //   document.getElementById("login_div").value = "";
-  //   console.log("Logged out")
-    window.location.replace("login.html");
+  console.log("Logged out")
+   // window.location.replace("login.html");
   }).catch(function(error) {
     // An error happened.
       console.log("Error : " + error)
@@ -83,42 +83,11 @@ function submitPhoneNumberAuthCode() {
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    console.log("Logged In");
-    console.log(user);
-  //     document.querySelector(".uerlogged").style.display = "block";
-
-  //     var phone = user.phoneNumber;
-  //     userdata
-  //         .where("phone", "==", phone)
-  //         .get()
-  //         .then((snapshot) => {
-  //             snapshot.forEach((doc) => {
-  //                 userID = doc.id;
-  //                 var name = doc.data().phone;
-  //                 if (doc.data().name != undefined) {
-  //                     name = doc.data().name;
-  //                 }
-  //                 if (doc.data().displayimg != undefined) {
-  //                     var x, i;
-                     
-  //                     x = document.querySelectorAll(".rounded-circle");
-  //                     for (i = 0; i < x.length; i++) {
-  //                         x[i].src = doc.data().displayimg;
-                    
-  //                     }
-               
-  //                 }
-                 
-  //                 document.getElementById("usertitle").innerHTML = name;
-  //                 var waltamout=0;
-  //                   if (doc.data().walletAmount != undefined) {
-  //                     waltamout = doc.data().walletAmount;
-  //                 }
-  //                 document.getElementById("walletamount").innerHTML = waltamout;
-  //             });
-  //         });
-  // } else {
-     // document.querySelector(".notlogin").style.display = "block";
+    document.querySelector("#accountdiv").style.display = "block";
+    document.querySelector("#logindiv").style.display = "none";
+  } else {
+     document.querySelector("#logindiv").style.display = "block";
+     document.querySelector("#accountdiv").style.display = "none";
   }
 });
 

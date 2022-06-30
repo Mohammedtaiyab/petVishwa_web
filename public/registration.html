@@ -39,6 +39,7 @@
 </head>
 
 <body>
+    
     <!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
@@ -136,6 +137,15 @@
                                 </li>
                                
                                 <li><a href="contact.html">Contact</a></li>
+
+                                <li  id="accountdiv">
+                                    <a href="#">Account <i class="fal fa-user"></i></a>
+                                    <ul class="submenu">
+                                        <li><a href="user-dashboard.html">Dashboard</a></li>
+                                        <li><a href="bookings.html">Booking History</a></li>
+                                        <li><a href="javascript:void(0)" onclick="Logout()">Logout</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -143,8 +153,9 @@
                     <!-- navbar right content -->
                     <div class="menu-right-buttons">
                         <!-- Log in icon -->
-                        <div class="login-btn ml-0">
+                        <div class="login-btn" id="logindiv">
                             <a href="javascript:void(0)" id="loginBtn"data-toggle="modal" data-target="#myModal"><i class="fal fa-user"></i></a>
+                        
                         </div>
                         
                         <a class="main-btn btn-filled ml-2 d-none d-md-block" href="contact.html" tabindex="0">Book now </a>
@@ -239,7 +250,7 @@
                                     </label>
                                     <input type="text" placeholder="Your Email" name="email" required="">
                                 </div>
-                                <div class="col-xl-12 input-group mb-20 d-none" id="setcode">
+                                <div class="col-xl-12 input-group mb-20" id="registercodediv" style="display:none;" id="setcode">
                                     <label class="">OTP</label>
                                     <input type="text" id="registercode" placeholder="********">
                                 </div>
@@ -250,7 +261,7 @@
                      <a href="#">Privacy Policy</a>
                                     </p>
                                     <button type="button" class="main-btn btn-filled w-100" id="verifybtn" onclick="registersubmitPhoneNumberAuth();">Verify with OTP</button>
-                                    <button type="button" class="main-btn btn-filled w-100 d-none" id="registerbtn" onclick="submitPhoneNumberAuthCoderegister();">Register</button>
+                                    <button type="button" class="main-btn btn-filled w-100" style="display: none;" id="registerbtn" onclick="submitPhoneNumberAuthCoderegister();">Register</button>
                                 </div>
                             </div>
                         </div>
@@ -286,9 +297,15 @@
                                 <input type="date" name="petDob">
                             </div>
                              <div class="col-12 input-group mb-20">
-                                    <label>Pet Image
+                                 <label>Pet Image
                                     </label>
+                                <div class="d-flex">
                                     <input type="file" >
+                                    <input type="hidden" name="PetImageURL" id="PetImageURL">
+                                    <img src="assets/img/loading3.gif" id="loadimg" alt="" style="width:50px;height: 50px;margin-top: 9px; display: none;">
+                                </div>
+                                   
+                                  
                              </div>
                              <div class="col-6 input-group mb-20">
                                     <label>Is Your Pet Social with Others

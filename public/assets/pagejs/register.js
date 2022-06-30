@@ -1,9 +1,8 @@
-var user = database.collection("users");
+var usercollection = database.collection("users");
 var formvrtadd = document.getElementById('registeruser');
-
-
 formvrtadd.addEventListener('submit', function (evt) {
     evt.preventDefault();
+    alert("1");
     var phoneNumber = "+965" + document.querySelector("#phoneNumber2").value;
     console.log(phoneNumber);
     var appVerifier = window.recaptchaVerifier;
@@ -25,10 +24,11 @@ function showPosition(position) {
  }
 
  function submitPhoneNumberAuthCoderegister() {
+    alert("2");
     // We are using the test code we created before
-    var code = document.getElementById("codenumber").value;
+    var code = document.getElementById("registercode").value;
     //var code = document.querySelector("#code").value;
-    console.log(codenumber);
+    console.log(code);
     confirmationResult
         .confirm(code)
         .then(function (result) {
@@ -71,8 +71,9 @@ function showPosition(position) {
             } else {
                 object.location_coordinates = "";
             }
-             user.doc(user.id).set(object).then((res) => {
-                window.location.reload();
+            console.log(user.uid);
+            usercollection.doc(user.uid).set(object).then((res) => {
+               window.location.reload();
              })
          
             //refresh();
@@ -82,27 +83,18 @@ function showPosition(position) {
         });
 }
 
-
-
-
-
-
-
-
-
-
 function registersubmitPhoneNumberAuth() {
-
+    alert("3");
+    document.querySelector("#registercodediv").style.display = "block";
+    document.querySelector("#verifybtn").style.display="none";
+    document.querySelector("#registerbtn").style.display="block";
     var phoneNumber = "+965" + document.querySelector("#phoneNumber2").value;
-    console.log(phoneNumber);
+
     var appVerifier = window.recaptchaVerifier;
     firebase
         .auth()
         .signInWithPhoneNumber(phoneNumber, appVerifier)
         .then(function (confirmationResult) {
-            document.querySelector("#registercode").style.display = "";
-            document.querySelector("#verifybtn").style.display="none";
-            document.querySelector("#registerbtn").style.display="";
             window.confirmationResult = confirmationResult;
         })
         .catch(function (error) {
@@ -116,11 +108,24 @@ window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
     {
         size: "invisible",
         callback: function (response) {
-            otpdiv.style.display = "block";
-            otpbtn.style.display = "none";
-            signbtn.style.display = "block";
-            very.style.display = "";
+            document.querySelector("#registercodediv").style.display = "block";
+            document.querySelector("#verifybtn").style.display="none";
+            document.querySelector("#registerbtn").style.display="block";
             registersubmitPhoneNumberAuth();
         },
     }
 );
+var storage = firebase.storage();
+const ref = firebase.storage().ref();
+$("input[type=file]").on('change',function(){
+    document.getElementById("loadimg").style.display="block";
+    const image =$("input[type=file]")[0].files[0];
+    const path =ref.child("imagefolder/" + image.name);
+    path.put(image).then(function() {
+      path.getDownloadURL().then(function(url) {
+        $("#PetImageURL").val(url);
+        $("#loadimg").attr("src","assets/img/check.gif");
+      })
+    })
+});
+

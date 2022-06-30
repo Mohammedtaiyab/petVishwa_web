@@ -308,7 +308,7 @@
                 <div class="col-lg-4">
                     <div class="room-booking-form">
                         <h5 class="title">Check Availability</h5>
-                        <form action="#">
+                        <form action="post" id="bookingform">
                             <div class="input-group input-group-two left-icon mb-20">
                                 <label for="arrival-date">Check In</label>
                                 <div class="icon"><i class="fal fa-calendar-alt"></i></div>
@@ -338,7 +338,7 @@
                                 </select>
                             </div>
                             <div class="input-group">
-                                <button class="main-btn btn-filled">check availability</button>
+                                <button type="submit" class="main-btn btn-filled" >Book</button>
                             </div>
                         </form>
                     </div>
@@ -582,9 +582,14 @@ var servpro = database.collection("serviceProviders"); //serviceType
 
 
 
-
-
-
+    var formvrtadd = document.getElementById('bookingform');
+formvrtadd.addEventListener('submit', function (evt) {
+    evt.preventDefault();
+    var formData = new FormData(formvrtadd);
+            var object = {};
+            formData.forEach((value, key) => object[key] = value);
+            console.log(object);
+});
 
 
 

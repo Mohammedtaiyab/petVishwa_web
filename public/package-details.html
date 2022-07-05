@@ -306,19 +306,46 @@
                 </div>
                 <!-- form -->
                 <div class="col-lg-4">
+                    
                     <div class="room-booking-form">
                         <h5 class="title">Check Availability</h5>
                         <form action="post" id="bookingform">
-                            <div class="input-group input-group-two left-icon mb-20">
-                                <label for="arrival-date">Check In</label>
-                                <div class="icon"><i class="fal fa-calendar-alt"></i></div>
-                                <input type="text" placeholder="20-6-2022" name="arrival-date" id="arrival-date">
-                            </div>
-                            <div class="input-group input-group-two left-icon mb-20">
-                                <label for="departure-date">Check Out</label>
-                                <div class="icon"><i class="fal fa-calendar-alt"></i></div>
-                                <input type="text" placeholder="30-6-2022" name="departure-date" id="departure-date">
-                            </div>
+                            <div class="product-description mt-100">
+                                <div class="tabs">
+                                  <ul class="nav nav-tabs justify-content-center">
+                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#description">Boarding</a></li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#reviews">Day Care</a> </li>
+                                  </ul>
+                                  <div class="tab-content pb-0">
+                                    <div class="tab-pane active" id="description">
+                                        <div class="input-group input-group-two left-icon mb-20">
+                                            <label for="arrival-date">Check In</label>
+                                            <div class="icon"><i class="fal fa-calendar-alt"></i></div>
+                                            <input type="text" placeholder="20-6-2022" name="arrival-date" id="arrival-date">
+                                        </div>
+                                        <div class="input-group input-group-two left-icon mb-20">
+                                            <label for="departure-date">Check Out</label>
+                                            <div class="icon"><i class="fal fa-calendar-alt"></i></div>
+                                            <input type="text" placeholder="30-6-2022" name="departure-date" id="departure-date">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="reviews">
+                                        <div class="input-group input-group-two left-icon mb-20">
+                                            <label for="arrival-date">Check In Time</label>
+                                           
+                                            <input type="time"  name="arrival-time" id="arrival-time">
+                                        </div>
+                                        <div class="input-group input-group-two left-icon mb-20">
+                                            <label for="departure-date">Check Out Time</label>
+                                           
+                                            <input type="time"  name="departure-time" id="departure-time">
+                                        </div>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                            
                             <div class="input-group input-group-two left-icon mb-20">
                                 <label for="room">Rooms</label>
                                 <select name="room" id="room">

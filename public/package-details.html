@@ -36,6 +36,30 @@
 	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+<style>
+.addon-checkbox{
+    display: flex;
+    justify-content: space-between;
+}
+.addon-checkbox input{
+    width: 24px;
+    margin-top: -20px;
+}
+
+#addonsitem{
+
+    border: 0;
+    width: 50px;
+    padding: 0px 10px;
+    height: 50px;
+    font-weight: 900;
+    margin: 0px 1px;
+    top: -15px;
+    position: relative;
+
+}
+</style>
+
 </head>
 
 <body>
@@ -143,9 +167,13 @@
                     <!-- navbar right content -->
                     <div class="menu-right-buttons">
                         <!-- Log in icon -->
-                        <div class="login-btn ml-0">
+                        <div class="login-btn" id="logindiv">
                             <a href="javascript:void(0)" id="loginBtn"data-toggle="modal" data-target="#myModal"><i class="fal fa-user"></i></a>
-                        </div>
+                        </div> 
+                        <input type="hidden" id="userlogid">
+                        <div class="login-btn" id="accountdiv">
+                            <a href="user-dashboard.html" title="Account"><i class="fal fa-user"></i></a>
+                        </div> 
                         
                         <a class="main-btn btn-filled ml-2 d-none d-md-block" href="contact.html" tabindex="0">Book now </a>
                     
@@ -190,8 +218,9 @@
                                 <div class="room-cat"><span id="shopName"></span></div>
                                 <h2><span id="shopAddress"></span></h2>
                             </div>
-                            <div class="price">
-                                Rs. <span id="OnboardingPerDay"></span> <span>/Night</span>
+                            <div class="price" >
+                                Rs. 
+                               <span id="OnboardingPerDay" style="font-size: 40px;"></span> <span>/Night</span>
                             </div>
                         </div>
                         <div class="thumb">
@@ -309,61 +338,89 @@
                     
                     <div class="room-booking-form">
                         <h5 class="title">Check Availability</h5>
-                        <form action="post" id="bookingform">
-                            <div class="product-description mt-100">
+                        <form action="" id="bookingform">
+                            <div class="product-description mt-5">
                                 <div class="tabs">
                                   <ul class="nav nav-tabs justify-content-center">
-                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#description">Boarding</a></li>
-                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#reviews">Day Care</a> </li>
+                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#Boarding">Boarding</a></li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Daycare">Day Care</a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Grooming">Services</a> </li>
                                   </ul>
                                   <div class="tab-content pb-0">
-                                    <div class="tab-pane active" id="description">
+                                    <div class="tab-pane active" id="Boarding">
                                         <div class="input-group input-group-two left-icon mb-20">
                                             <label for="arrival-date">Check In</label>
                                             <div class="icon"><i class="fal fa-calendar-alt"></i></div>
-                                            <input type="text" placeholder="20-6-2022" name="arrival-date" id="arrival-date">
+                                            <input type="text" placeholder="Check-in Date" name="checkInDate" id="arrival-date" autocomplete="off">
                                         </div>
                                         <div class="input-group input-group-two left-icon mb-20">
                                             <label for="departure-date">Check Out</label>
                                             <div class="icon"><i class="fal fa-calendar-alt"></i></div>
-                                            <input type="text" placeholder="30-6-2022" name="departure-date" id="departure-date">
+                                            <input type="text" placeholder="Check Out Date" name="checkOutDate" id="departure-date" autocomplete="off">
                                         </div>
+                                        <div class="input-group input-group-two left-icon mb-20">
+                                            <label for="departure-date">Guest</label>
+                                            <select name="guest" id="guest">
+                                                <option value="1">1</option>
+                                                <option value="2"selected>2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
+                                        <input type="hidden" name="boardingcharges"  id="boardingcharges">
+                                        <h5>Add Ons</h5>
                                     </div>
-                                    <div class="tab-pane fade" id="reviews">
+                                    <div class="tab-pane fade " id="Daycare">
+                                        <div class="input-group input-group-two left-icon mb-20">
+                                            <label for="arrival-date">On Date</label>
+                                            <div class="icon"><i class="fal fa-calendar-alt"></i></div>
+                                            <input type="text" placeholder="Reservation Date" name="reservedate" id="departure-date" autocomplete="off">
+                                        </div>
                                         <div class="input-group input-group-two left-icon mb-20">
                                             <label for="arrival-date">Check In Time</label>
                                            
-                                            <input type="time"  name="arrival-time" id="arrival-time">
+                                            <input type="time"  name="fromTime" id="arrival-time">
                                         </div>
                                         <div class="input-group input-group-two left-icon mb-20">
                                             <label for="departure-date">Check Out Time</label>
                                            
-                                            <input type="time"  name="departure-time" id="departure-time">
+                                            <input type="time"  name="toTime" id="departure-time">
                                         </div>
+                                        <div class="input-group input-group-two left-icon mb-20">
+                                            <label for="departure-date">Guest</label>
+                                            <select name="guests" id="guests">
+                                                <option value="1">1</option>
+                                                <option value="2"selected>2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
+                                        <input type="hidden" name="daycarecharges"  id="daycarecharges">
+                                        <h5>Add Ons</h5>
                                     </div>
+                               
+                                       
+                                      <div class="tab-pane fade" id="Grooming">
+                                        <div class="input-group input-group-two left-icon mb-20">
+                                            <label for="arrival-date">Appointment Date</label>
+                                            <div class="icon"><i class="fal fa-calendar-alt"></i></div>
+                                            <input type="text" placeholder="20-6-2022" name="appointmentDate" id="arrival-date" autocomplete="off">
+                                        </div>
+                                        <div class="input-group input-group-two left-icon mb-20">
+                                            <label for="arrival-date">Appointment Time</label>
+                                            <input type="time"  name="appointmentTime" id="arrival-time">
+                                        </div>
+                                        <h5>Services</h5>
+                                    </div>
+                                        <div id="addons">
+                                          
+                                        </div>
                                     
                                   </div>
                                 </div>
                               </div>
                             
-                            <div class="input-group input-group-two left-icon mb-20">
-                                <label for="room">Rooms</label>
-                                <select name="room" id="room">
-                                    <option value="1">1 Package</option>
-                                    <option value="2" selected>2 Package</option>
-                                    <option value="4">4 Package</option>
-                                    <option value="8">8 Package</option>
-                                </select>
-                            </div>
-                            <div class="input-group input-group-two left-icon mb-20">
-                                <label for="departure-date">Guest</label>
-                                <select name="guest" id="guest">
-                                    <option value="1">1 Guest</option>
-                                    <option value="2" selected>2 Guest</option>
-                                    <option value="3">3 Guest</option>
-                                    <option value="4">4 Guest</option>
-                                </select>
-                            </div>
+                           
                             <div class="input-group">
                                 <button type="submit" class="main-btn btn-filled" >Book</button>
                             </div>
@@ -482,7 +539,7 @@
     <!-- The Modal -->
     <div class="modal fade on-load-modal" id="myModal">
         <div class="modal-dialog modal-dialog-centeRed">
-            <div class="modal-content" style="background-image: url(assets/img/popup.jpg)">
+            <div class="modal-content" style="background-image: url(assets/img/petsloginbg.jpg);background-position: center;">
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <button type="button" class="close popup-trigger" data-dismiss="modal">&times;</button>
@@ -551,22 +608,34 @@
 
 <script>
       var servpro = database.collection("AllServices"); //serviceType
+      var servicepro = database.collection("serviceProviders");
     var count=1;
-      servpro
+    servpro
   .where("serviceType","==","BOARDING").get()
     .then((snapshot) => {
       snapshot.forEach((doc) => {
-            console.log(doc.data());
+servicepro.doc(doc.data().serviceProviderId).get()
+  .then((docpro) => {
             document.getElementById("boardingtable").innerHTML+=
-            ' <div class="col-lg-6 col-md-6 col-sm-6">'+
+            ' <div class="col-md-4">'+
                 '    <div class="room-box mb-30">'+
                 '        <div class="room-img-wrap">'+
                 '            <div class="room-img" style="background-image: url(assets/img/room/0'+count+'.jpg);"></div>'+
                 '        </div>'+
                 '        <div class="room-desc">'+
-                '            <h4 class="title"><a href="package-details.html?id='+doc.data().serviceProviderId+'">'+doc.data().serviceName+'</a></h4>'+
-                '            <span class="price">Rs. '+doc.data().price+'/Night</span>'+
-                '            <a href="package-details.html" class="book-btn">Booking Now</a>'+
+                '            <ul class="icons">'+
+                '                <li><i class="fal fa-bone"></i></li>'+
+                '                <li><i class="fal fa-cat"></i></li>'+
+                '                <li><i class="fal fa-dog"></i></li>'+
+                '                <li><i class="fal fa-paw"></i></li>'+
+                '                <li><i class="fal fa-shower"></i></li>'+
+                '                <li><i class="fal fa-tennis-ball"></i></li>'+
+                '                <li><i class="fal fa-concierge-bell"></i></li>'+
+                '            </ul>'+
+                '            <h4 class="title"><a href="package-details.html?id='+docpro.id+'">'+docpro.data().shopName+'</a></h4>'+
+                '            <p></p>'+
+                '            <span class="price">Rs. '+docpro.data().OnboardingPerDay+'/Day</span>'+
+                '            <a href="package-details.html?id='+docpro.id+'" class="book-btn">Booking Now</a>'+
                 '        </div>'+
                 '    </div>'+
                 '</div>';
@@ -574,16 +643,16 @@
                     count=1;
                 }else{
                     count++;
-                }
+                }  
+            })
       })
     });
-
-
 
 var url_string = window.location.href;
 var url = new URL(url_string);
 var id = url.searchParams.get("id");
 var servpro = database.collection("serviceProviders"); //serviceType
+var serviceids=[];
     var count=1;
       servpro
   .doc(id).get()
@@ -591,6 +660,8 @@ var servpro = database.collection("serviceProviders"); //serviceType
         $("#shopName").html(doc.data().name);
         $("#shopAddress").html(doc.data().shopName);
         $("#OnboardingPerDay").html(doc.data().OnboardingPerDay);
+        $("#boardingcharges").html(doc.data().OnboardingPerDay);
+        $("#daycarecharges").html(doc.data().DayCarePerHour);
         $("#shop_opens").html(timeformate(doc.data().shop_opens));
         $("#shop_ends").html(timeformate(doc.data().shop_ends));
         $("#name").html(doc.data().name)
@@ -607,19 +678,149 @@ var servpro = database.collection("serviceProviders"); //serviceType
 
     });
 
+    var bookings = database.collection("AllBookings");
+    var serlist = database.collection("AllServices"); //serviceType serviceProviderId\
+    var userdetail = database.collection("users"); //serviceType serviceProviderId\
+  
+    var list=0;
+    serlist
+  .where("serviceProviderId","==",id).get()
+  .then((snapshot) => {
+      snapshot.forEach((doc) => {
+        serviceids.push(doc.id);
+        document.getElementById("addons").innerHTML+='<div class="addon-checkbox left-icon">'+
+                                                '<label for="departure-date">'+doc.data().serviceName+'</label>'+
+                                                '<div class="d-flex"><p>'+doc.data().price+'</p>'+
+                                                '<input type="hidden" name="'+doc.id+'_price" value="'+doc.data().price+'">'+
+                                                '<input type="hidden" name="'+doc.id+'_name" value="'+doc.data().serviceName+'">'+
+                                                '<input type="number" min="0" value="0" max="'+doc.data().limit+'"  name="'+doc.id+'" id="addonsitem">'+
+                                                '</div></div>';
+                                                list++;
+                                            });
+                                   
+     });
+     const parent = document.querySelector('.tab-content');
 
-
+const children = Array.from(parent.children);
+function ordertype(){
+const ids = children.filter(element => {
+    if(element.classList.contains("active")){
+        return element;
+    }
+});
+return ids[0].id;
+}
     var formvrtadd = document.getElementById('bookingform');
 formvrtadd.addEventListener('submit', function (evt) {
     evt.preventDefault();
     var formData = new FormData(formvrtadd);
             var object = {};
-            formData.forEach((value, key) => object[key] = value);
-            console.log(object);
+            formData.forEach((value, key) => object[key] = value);   
+    var orderType=ordertype();
+    var order={"OrderType":orderType};
+    order['customer_id']=$("#userlogid").val();
+    order['vendor_id']=id;
+    servpro
+  .doc(id).get()
+    .then((doc) => {
+        for (let property in doc.data()) {
+            order['vendor_'+property]=doc.data()[property];
+    
+ }
+    });
+
+    order['customer_id']=$("#userlogid").val();
+    order['vendor_id']=id;
+    if(orderType=="Boarding"){
+        order['checkInDate']=dateformate(object.checkInDate);
+        order['checkOutDate']=dateformate(object.checkOutDate);
+        var days=1+daysDifference(order['checkInDate'],order['checkOutDate'])
+        order['totalAmount']=(days*($("#guest").val()*$("#boardingcharges").val()));
+    }else if(orderType=="Daycare"){
+        //object.reservedate
+        order['fromTime']=datetimeformate(object.reservedate,object.fromTime);
+        order['toTime']=datetimeformate(object.reservedate,object.toTime);
+        var hourDiff = 
+        parseInt(object.fromTime.split(':')[0],10) -         
+        parseInt(object.toTime.split(':')[0],10);
+        if (hourDiff<0) {hourDiff=hourDiff*-1;}
+        order['totalAmount']=(hourDiff*($("#guests").val()*$("#daycarecharges").val()));
+    }else if(orderType=="Grooming"){
+        order['appointmentDate']=dateformate(object.appointmentDate);
+        order['appointmentTime']=datetimeformate(object.appointmentDate,object.appointmentTime);
+    }
+    var selectedservices=[];
+    var serivcetotal=0;
+    for (let i = 0; i < serviceids.length; i++) {
+        const element = object[serviceids[i]];
+            if(element>0){
+               selectedservices.push({
+                "serviceId":serviceids[i],
+                "limit":element,
+                "serviceProviderId":id,
+                "serviceName": object[serviceids[i]+"_name"],
+                "price":object[serviceids[i]+"_price"],
+                "availability":true
+            });
+            serivcetotal = serivcetotal+(object[serviceids[i]+"_price"]*element);
+            }
+    }
+    if(order['totalAmount']){
+        order['totalAmount']+=serivcetotal;
+    }else{
+        order['totalAmount']=serivcetotal;
+    }
+   
+    order['services']=selectedservices;
+
+ saveorder(order);
 });
 
+function saveorder(order){
+   
+    bookings.add(order).then((res)=>{
+        for (let i = 0; i < order.services.length; i++) {
+            const element = order.services[i];
+            bookings.doc(res.id).collection("services").add(element);
+        }
+        var userid=$("#userlogid").val();
+        var customer=[];
+    userdetail
+  .doc(userid).get()
+    .then((doc) => {
+        for (let property in doc.data()) {
+            customer['customer_'+property]=doc.data()[property];
+    
+ }
 
+ var datacustomer=Object.fromEntries(customer);
+ console.log(datacustomer);
+ bookings.doc(res.id).update(customer).then((res)=>{
+    //window.location.reload();
+});
+    });
+       window.location.reload();
+    })
+}
 
+function daysDifference(d0, d1) {
+  var diff = new Date(+d1).setHours(12) - new Date(+d0).setHours(12);
+  return Math.round(diff/8.64e7);
+}
+function dateformate(str){
+const [day,month, year] = str.split('-');
+return new Date(+year, +month - 1, +day);
+}
+function datetimeformate(date,time){
+const myDate =dateformate(date);
+
+const [hh,mm] = time.split(':');
+// Set hours
+myDate.setHours(hh);
+// Then set minutes
+myDate.setMinutes(mm);
+return myDate;
+}
 </script>
 
 </body>

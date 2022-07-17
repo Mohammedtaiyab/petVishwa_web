@@ -34,7 +34,7 @@ const signbtn = document.querySelector("#signbtn");
 signbtn.style.display = "none";
 
 function submitPhoneNumberAuth() {
-    var phoneNumber = "+965" + document.querySelector("#phoneNumber").value;
+    var phoneNumber = "+91" + document.querySelector("#phoneNumber").value;
     console.log(phoneNumber);
     var appVerifier = window.recaptchaVerifier;
     firebase
@@ -83,6 +83,7 @@ function submitPhoneNumberAuthCode() {
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
+    $("#userlogid").val(user.uid);
     document.querySelector("#accountdiv").style.display = "block";
     document.querySelector("#logindiv").style.display = "none";
   } else {

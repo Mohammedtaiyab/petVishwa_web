@@ -127,13 +127,7 @@
                                 <li><a href="boarding.html">Boarding</a></li>
                                 <li><a href="services.html">Service</a></li>
                                 <li><a href="contact.html">Contact</a></li>
-                                <li id="accountdiv"><a href="#">Account <i class="fal fa-user"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href="user-dashboard.html">Dashboard</a></li>
-                                        <li><a href="bookings.html">Booking History</a></li>
-                                        <li><a href="javascript:void(0)" onclick="Logout()">Logout</a></li>
-                                    </ul>
-                                </li>
+                              
                             </ul>
                         </div>
                     </div>
@@ -142,7 +136,12 @@
                         <!-- Log in icon -->
                         <div class="login-btn" id="logindiv">
                             <a href="javascript:void(0)" id="loginBtn"data-toggle="modal" data-target="#myModal"><i class="fal fa-user"></i></a>
-                        </div>                        
+                        </div> 
+                        
+                        <div class="login-btn" id="accountdiv">
+                            <a href="user-dashboard.html" title="Account"><i class="fal fa-user"></i></a>
+                        </div> 
+                        
                         <a class="main-btn btn-filled ml-2 d-none d-md-block" href="contact.html" tabindex="0">Book now </a>
                         <!-- Navbar Toggler -->
                         <div class="navbar-toggler">
@@ -432,7 +431,7 @@
     <!-- The Modal -->
     <div class="modal fade on-load-modal" id="myModal">
         <div class="modal-dialog modal-dialog-centeRed">
-            <div class="modal-content" style="background-image: url(https://wallpaperaccess.com/the-secret-life-of-pets)">
+            <div class="modal-content" style="background-image: url(assets/img/petsloginbg.jpg);background-position: center;">
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <button type="button" class="close popup-trigger" data-dismiss="modal">&times;</button>

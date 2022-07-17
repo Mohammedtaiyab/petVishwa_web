@@ -2,9 +2,7 @@ var usercollection = database.collection("users");
 var formvrtadd = document.getElementById('registeruser');
 formvrtadd.addEventListener('submit', function (evt) {
     evt.preventDefault();
-    alert("1");
-    var phoneNumber = "+965" + document.querySelector("#phoneNumber2").value;
-    console.log(phoneNumber);
+    var phoneNumber = "+91" + document.querySelector("#phoneNumber2").value;
     var appVerifier = window.recaptchaVerifier;
     firebase
         .auth()
@@ -24,7 +22,7 @@ function showPosition(position) {
  }
 
  function submitPhoneNumberAuthCoderegister() {
-    alert("2");
+
     // We are using the test code we created before
     var code = document.getElementById("registercode").value;
     //var code = document.querySelector("#code").value;
@@ -84,7 +82,6 @@ function showPosition(position) {
 }
 
 function registersubmitPhoneNumberAuth() {
-    alert("3");
     document.querySelector("#registercodediv").style.display = "block";
     document.querySelector("#verifybtn").style.display="none";
     document.querySelector("#registerbtn").style.display="block";
@@ -115,6 +112,7 @@ window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
         },
     }
 );
+
 var storage = firebase.storage();
 const ref = firebase.storage().ref();
 $("input[type=file]").on('change',function(){

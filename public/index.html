@@ -143,9 +143,13 @@
                     <!-- navbar right content -->
                     <div class="menu-right-buttons">
                         <!-- Log in icon -->
-                        <div class="login-btn ml-0">
+                        <div class="login-btn" id="logindiv">
                             <a href="javascript:void(0)" id="loginBtn"data-toggle="modal" data-target="#myModal"><i class="fal fa-user"></i></a>
-                        </div>
+                        </div> 
+                        <input type="hidden" id="userlogid">
+                        <div class="login-btn" id="accountdiv">
+                            <a href="user-dashboard.html" title="Account"><i class="fal fa-user"></i></a>
+                        </div> 
                         
                         <a class="main-btn btn-filled ml-2 d-none d-md-block" href="contact.html" tabindex="0">Book now </a>
                     
@@ -172,10 +176,10 @@
                             </h1>
                             <ul>
                                 <li data-animation="fadeInUp" data-delay="1.1s">
-                                    <a class="main-btn btn-filled" href="shop-left.html">Shop Now</a>
+                                    <a class="main-btn btn-filled" href="boarding.html">Boarding</a>
                                 </li>
                                 <li data-animation="fadeInUp" data-delay="1.3s">
-                                    <a class="main-btn btn-border" href="package-grid.html">Boarding</a>
+                                    <a class="main-btn btn-border" href="services.html">Service</a>
                                 </li>
                             </ul>
                         </div>
@@ -186,36 +190,12 @@
             <div class="banner-bg" style="background-image: url(assets/img/banner/07.jpg);"></div>
             <div class="banner-overly"></div>
         </div>
-        <div class="single-banner d-flex align-items-center justify-content-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="banner-content text-center">
-                            <span class="promo-tag" data-animation="fadeInDown" data-delay=".6s">Veterinary care reimagined
-                                experience</span>
-                            <h1 class="title" data-animation="fadeInLeft" data-delay=".9s">The Perfect <br> Base For You
-                            </h1>
-                            <ul>
-                                <li data-animation="fadeInUp" data-delay="1.1s">
-                                    <a class="main-btn btn-filled" href="shop-left.html">Shop Now</a>
-                                </li>
-                                <li data-animation="fadeInUp" data-delay="1.3s">
-                                    <a class="main-btn btn-border" href="about.html">Learn More</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- banner bg -->
-            <div class="banner-bg" style="background-image: url(assets/img/banner/05.jpg);"></div>
-            <div class="banner-overly"></div>
-        </div>
+      
         </div>
     </section>
     <!--====== BANNER PART ENDS ======-->
     <!--====== BOOKING FORM START ======-->
-    <div class="booking-form">
+    <!-- <div class="booking-form">
         <div class="container">
             <div class="booking-form-inner">
                 <form action="#">
@@ -256,7 +236,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
     <!--====== BOOKING FORM END ======-->
     <!--====== TEXT BLOCK START ======-->
     <section class="text-block pt-115 pb-115">
@@ -299,7 +279,7 @@
                         <div class="icon">
                             <i class="flaticon-grooming"></i>
                         </div>
-                        <h3><a href="service-details.html">Pet Grooming</a></h3>
+                        <h3><a href="#">Pet Grooming</a></h3>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna..
@@ -313,7 +293,7 @@
                         <div class="icon">
                             <i class="flaticon-pet-friendly"></i>
                         </div>
-                        <h3><a href="service-details.html">Pet Rescue</a></h3>
+                        <h3><a href="#">Pet Rescue</a></h3>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna..
@@ -326,7 +306,7 @@
                         <div class="icon">
                             <i class="flaticon-cat"></i>
                         </div>
-                        <h3><a href="service-details.html">Pet Care</a></h3>
+                        <h3><a href="#">Pet Care</a></h3>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna..
@@ -340,7 +320,7 @@
                         <div class="icon">
                             <i class="flaticon-pet-toy"></i>
                         </div>
-                        <h3><a href="service-details.html">Onboarding</a></h3>
+                        <h3><a href="#">Onboarding</a></h3>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna..
@@ -353,7 +333,7 @@
                         <div class="icon">
                             <i class="flaticon-vet"></i>
                         </div>
-                        <h3><a href="service-details.html">Pet Vet</a></h3>
+                        <h3><a href="#">Pet Vet</a></h3>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna..
@@ -367,7 +347,7 @@
                         <div class="icon">
                             <i class="flaticon-dog"></i>
                         </div>
-                        <h3><a href="service-details.html">Pet Shower</a></h3>
+                        <h3><a href="#">Pet Shower</a></h3>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna..
@@ -395,95 +375,8 @@
                 </div>
             </div>
             <!-- Package Looop -->
-            <div class="row room-gird-loop mt-80 feature-room-slider">
-                <div class="col-lg-4">
-                    <div class="room-box">
-                        <div class="room-img-wrap">
-                            <div class="room-img" style="background-image: url(assets/img/room/01.jpg);"></div>
-                        </div>
-                        <div class="room-desc">
-                            <ul class="icons">
-                                <li><i class="fal fa-bone"></i></li>
-                                <li><i class="fal fa-cat"></i></li>
-                                <li><i class="fal fa-dog"></i></li>
-                                <li><i class="fal fa-paw"></i></li>
-                                <li><i class="fal fa-shower"></i></li>
-                                <li><i class="fal fa-tennis-ball"></i></li>
-                                <li><i class="fal fa-concierge-bell"></i></li>
-                            </ul>
-                            <h4 class="title"><a href="package-details.html">Outdoor Package</a></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor.</p>
-                            <span class="price">$345/Night</span>
-                            <a href="package-details.html" class="book-btn">Booking Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="room-box">
-                        <div class="room-img-wrap">
-                            <div class="room-img" style="background-image: url(assets/img/room/02.jpg);"></div>
-                        </div>
-                        <div class="room-desc">
-                            <ul class="icons">
-                                <li><i class="fal fa-bone"></i></li>
-                                <li><i class="fal fa-cat"></i></li>
-                                <li><i class="fal fa-dog"></i></li>
-                                <li><i class="fal fa-paw"></i></li>
-                                <li><i class="fal fa-shower"></i></li>
-                                <li><i class="fal fa-tennis-ball"></i></li>
-                                <li><i class="fal fa-concierge-bell"></i></li>
-                            </ul>
-                            <h4 class="title"><a href="package-details.html">Outdoor Package</a></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor.</p>
-                            <span class="price">$345/Night</span>
-                            <a href="package-details.html" class="book-btn">Booking Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="room-box">
-                        <div class="room-img-wrap">
-                            <div class="room-img" style="background-image: url(assets/img/room/03.jpg);"></div>
-                        </div>
-                        <div class="room-desc">
-                            <ul class="icons">
-                                <li><i class="fal fa-bone"></i></li>
-                                <li><i class="fal fa-cat"></i></li>
-                                <li><i class="fal fa-dog"></i></li>
-                                <li><i class="fal fa-paw"></i></li>
-                                <li><i class="fal fa-shower"></i></li>
-                                <li><i class="fal fa-tennis-ball"></i></li>
-                                <li><i class="fal fa-concierge-bell"></i></li>
-                            </ul>
-                            <h4 class="title"><a href="package-details.html">Outdoor Package</a></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor.</p>
-                            <span class="price">$345/Night</span>
-                            <a href="package-details.html" class="book-btn">Booking Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="room-box">
-                        <div class="room-img-wrap">
-                            <div class="room-img" style="background-image: url(assets/img/room/02.jpg);"></div>
-                        </div>
-                        <div class="room-desc">
-                            <ul class="icons">
-                                <li><i class="fal fa-bone"></i></li>
-                                <li><i class="fal fa-cat"></i></li>
-                                <li><i class="fal fa-dog"></i></li>
-                                <li><i class="fal fa-paw"></i></li>
-                                <li><i class="fal fa-shower"></i></li>
-                                <li><i class="fal fa-tennis-ball"></i></li>
-                                <li><i class="fal fa-concierge-bell"></i></li>
-                            </ul>
-                            <h4 class="title"><a href="package-details.html">Outdoor Package</a></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor.</p>
-                            <span class="price">$345/Night</span>
-                            <a href="package-details.html" class="book-btn">Booking Now</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="row room-gird-loop mt-80" id="boardingtable">
+           
             </div>
         </div>
         <div class="shape-1 d-none d-sm-block">
@@ -494,149 +387,7 @@
         </div>
     </section>
     <!--====== FEATURE ROOM END ======-->
-    <!--====== COUNTER UP START ======-->
-    <section class="counter-section bg-black pt-100 pb-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="counter-box">
-                        <div class="icon">
-                            <img src="assets/img/icon/01.png" alt="Icon">
-                        </div>
-                        <h4><span class="counter">84</span>k<span class="plus-icon">+</span></h4>
-                        <span class="title">Pets treated</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="counter-box">
-                        <div class="icon">
-                            <img src="assets/img/icon/02.png" alt="Icon">
-                        </div>
-                        <h4><span class="counter">10</span>M<span class="plus-icon">+</span></h4>
-                        <span class="title">Customers Around World</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="counter-box">
-                        <div class="icon">
-                            <img src="assets/img/icon/03.png" alt="Icon">
-                        </div>
-                        <h4><span class="counter">02</span>k<span class="plus-icon">+</span></h4>
-                        <span class="title">Satisfied Customers</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="counter-box">
-                        <div class="icon">
-                            <img src="assets/img/icon/04.png" alt="Icon">
-                        </div>
-                        <h4><span class="counter">100</span>M<span class="plus-icon">+</span></h4>
-                        <span class="title">Awards Won</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====== COUNTER UP END ======-->
-    <!--====== TESTIMONIAL SLIDER START ======-->
-    <section class="testimonial-section pb-115 pt-115">
-        <div class="container">
-            <div class="section-title text-center mb-80">
-                <span class="title-tag"><i class="flaticon-dog-food-1"></i>testimonials</span>
-                <h2>Client <span class="highlight">Feedback</span></h2>
-            </div>
-            <!-- testimonials loop  -->
-            <div class="row testimonial-slider">
-                <div class="col-lg-4">
-                    <div class="testimonial-box">
-                        <div class="client-img">
-                            <img src="assets/img/testimonial/01.png" alt="images">
-                            <span class="check"><i class="fas fa-quote-right"></i></span>
-                        </div>
-                        <h3>Rosalina D. William</h3>
-                        <span class="clinet-post">Founder, qux co.</span>
-                        <ul class="sigma_social-links justify-content-center">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="red-icon"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" class="green-icon"><i class="fab fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-box">
-                        <div class="client-img">
-                            <img src="assets/img/testimonial/02.png" alt="images">
-                            <span class="check"><i class="fas fa-quote-right"></i></span>
-                        </div>
-                        <h3>Donald H. Hilixer</h3>
-                        <span class="clinet-post">Founder, hilix</span>
-                        <ul class="sigma_social-links justify-content-center">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="red-icon"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" class="green-icon"><i class="fab fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-box">
-                        <div class="client-img">
-                            <img src="assets/img/testimonial/03.png" alt="images">
-                            <span class="check"><i class="fas fa-quote-right"></i></span>
-                        </div>
-                        <h3>Browfish Dumble</h3>
-                        <span class="clinet-post">Founder, Condo</span>
-                        <ul class="sigma_social-links justify-content-center">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="red-icon"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" class="green-icon"><i class="fab fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-box">
-                        <div class="client-img">
-                            <img src="assets/img/testimonial/02.png" alt="images">
-                            <span class="check"><i class="fas fa-quote-right"></i></span>
-                        </div>
-                        <h3>Donald H. Hilixer</h3>
-                        <span class="clinet-post">Founder, hilix</span>
-                        <ul class="sigma_social-links justify-content-center">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="red-icon"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" class="green-icon"><i class="fab fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====== TESTIMONIAL SLIDER END ======-->
-    <!--====== VIDEO WRAP START ======-->
-    <section class="text-block bg-black sigma_video-sec pt-115 pb-115">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="block-text">
-                        <div class="section-title mb-20">
-                            <span class="title-tag text-white"><i class="flaticon-dog-food-1"></i>intro video</span>
-                            <h2>Watch Your Pet Play <span class="highlight">Around</span></h2>
-                        </div>
-                        <p class="pr-50">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat you have to understand this.
-                        </p>
-                        <a href="shop-left.html" class="main-btn btn-filled mt-40">Shop now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="video-wrap video-wrap-two mb-small"
-            style="background-image: url(assets/img/bg/05.jpg);">
-            <a href="https://www.youtube.com/watch?v=EEJFMdfraVY" class="popup-video"><i class="fas fa-play"></i></a>
-        </div>
-    </section>
-    <!--====== VIDEO WRAP END ======-->
+
     <!--====== LATEST NEWS START ======-->
     <section class="latest-blog pt-115 pb-115">
         <div class="container">
@@ -973,14 +724,14 @@
     <!-- The Modal -->
     <div class="modal fade" id="myModal">
         <div class="modal-dialog modal-dialog-centeRed">
-            <div class="modal-content" style="background-image: url(assets/img/popup.jpg)">
+            <div class="modal-content" style="background-image: url(assets/img/petsloginbg.jpg);background-position: center;">
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <button type="button" class="close popup-trigger" data-dismiss="modal">&times;</button>
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <div class="modal-inner">
+                    <div class="modal-inner logindiv">
                         <h3 class="title">Login</h3>
                         <p>Welcome Back!</p>
                         <form action="">
@@ -1041,6 +792,50 @@
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
     <script src="assets/pagejs/login.js"></script>
+    <script>
+        var servpro = database.collection("AllServices"); //serviceType
+        var servicepro= database.collection("serviceProviders");
+      var count=1;
+        servpro
+    .where("serviceType","==","BOARDING").limit(3).get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+            servicepro.doc(doc.data().serviceProviderId).get()
+  .then((docpro) => {
+
+    document.getElementById("boardingtable").innerHTML+=
+            ' <div class="col-lg-4">'+
+                '    <div class="room-box mb-30">'+
+                '        <div class="room-img-wrap">'+
+                '            <div class="room-img" style="background-image: url(assets/img/room/0'+count+'.jpg);"></div>'+
+                '        </div>'+
+                '        <div class="room-desc">'+
+                '            <ul class="icons">'+
+                '                <li><i class="fal fa-bone"></i></li>'+
+                '                <li><i class="fal fa-cat"></i></li>'+
+                '                <li><i class="fal fa-dog"></i></li>'+
+                '                <li><i class="fal fa-paw"></i></li>'+
+                '                <li><i class="fal fa-shower"></i></li>'+
+                '                <li><i class="fal fa-tennis-ball"></i></li>'+
+                '                <li><i class="fal fa-concierge-bell"></i></li>'+
+                '            </ul>'+
+                '            <h4 class="title"><a href="package-details.html?id='+docpro.id+'">'+docpro.data().shopName+'</a></h4>'+
+                '            <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor.</p>'+
+                '            <span class="price">Rs. '+docpro.data().OnboardingPerDay+'/Day</span>'+
+                '            <a href="package-details.html?id='+docpro.id+'"" class="book-btn">Booking Now</a>'+
+                '        </div>'+
+                '    </div>'+
+                '</div>';
+                  if(count>=9){
+                      count=1;
+                  }else{
+                      count++;
+                  }
+                })
+        })
+      });
+  
+  </script>
 </body>
 
 
